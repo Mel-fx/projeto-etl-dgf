@@ -1,0 +1,37 @@
+# Credenciais
+.env
+*.env
+kaggle.json
+
+# Airflow
+logs/
+airflow-etl/logs/
+*.pid
+*.cfg
+!docker-compose.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.ipynb_checkpoints/
+
+# Ambientes virtuais (se usar)
+venv/
+env/
+.venv/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dados brutos pesados
+# airflow-etl/data/raw/*.csv
+# airflow-etl/data/bronze/*.csv
+
+# Editor / IDE
+.vscode/
+*.swp
