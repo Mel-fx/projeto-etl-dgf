@@ -95,6 +95,8 @@ camada silver (`dados_pessoais.csv` e `dados_bancarios.csv`) para um bucket na r
 subdiretórios (`data/raw/`, `data/bronze/`, `data/silver/`), refletindo as camadas do
 pipeline e facilitando auditoria de cada etapa de processamento.
 
+<img width="1722" height="472" alt="{DB5C6B50-D04F-45E5-8987-6E66CDBFBAF6}" src="https://github.com/user-attachments/assets/857ec987-dddb-4f77-abeb-1d132ab3ed17" />
+
 ## 4. Automação do Pipeline
 
 O pipeline foi orquestrado com **Apache Airflow**, executado em ambiente **Docker**.
@@ -123,6 +125,8 @@ descartada por instabilidade, conforme recomendação da própria documentação
 prints informativos adicionados em cada função (`[EXTRACT]`, `[TRANSFORM]`, `[LOAD]`) com
 contagem de linhas processadas em cada etapa.
 
+<img width="1857" height="617" alt="{8889D2A4-7F96-4E5E-BBCA-8484AEC1917D}" src="https://github.com/user-attachments/assets/58da9861-3095-4cb6-8ea3-974286fdef5e" />
+
 ## 5. Dashboard Power BI (Bônus)
 
 Como entrega opcional, foi desenvolvido um dashboard conectado diretamente aos arquivos CSV
@@ -138,6 +142,8 @@ para N registros mensais), refletindo a mesma lógica de granularidade do pipeli
    por `Pontuacao_de_Credito`
 3. **Distribuição da renda anual por categoria de score** — gráfico de barras com a
    **média** (não soma) de `Renda_Anual` por `Pontuacao_de_Credito`
+   
+Além de outras que foram adicionadas para complementar o dashboard (como demonstrado nas imagens a seguir)
 
 **Observação técnica relevante:** a métrica de renda inicialmente foi construída com
 agregação de **soma**, o que gerou valores incoerentes (na casa de trilhões). A causa foi
@@ -145,6 +151,10 @@ identificada: como `Renda_Anual` está na tabela de granularidade mensal, o mesm
 renda de um cliente se repete em todas as suas linhas mensais; somar essas linhas
 multiplicava o valor real pelo número de meses de histórico do cliente. A correção foi
 trocar a agregação para **média**, que não é afetada pela repetição do valor idêntico.
+
+<img width="1485" height="809" alt="{69249586-41A7-4B39-834F-E4E80DEADE11}" src="https://github.com/user-attachments/assets/cea0a157-43f2-40dc-adde-239337793012" />
+
+<img width="1485" height="811" alt="{66CE7B20-AD89-442D-A44C-D37323305111}" src="https://github.com/user-attachments/assets/7c262873-fec8-4dd5-b732-13f027c375b3" />
 
 ## Perguntas Norteadoras de Negócio
 
